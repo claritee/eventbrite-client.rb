@@ -1,6 +1,8 @@
 require 'httparty'
 class EventbriteClient
   include HTTParty
+
+  http_proxy APP_CONFIG['proxy'], APP_CONFIG['proxy_port']
   base_uri 'https://www.eventbrite.com'
 
   def initialize( auth_tokens )
